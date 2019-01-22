@@ -1,0 +1,35 @@
+*play.txt* Support files for https://playframework.com
+
+Author: Zoltan Kalmar <kalmiz@gmail.com>
+License: Same terms as Vim itself (see |license|)
+
+INTRODUCTION              *play* *playframework* 
+
+A vim plugin for Play framework. It provides a compiler plugin for scalac and
+syntax support for Play routes, config and template files.
+
+VARIABLES                 *play-variables*
+
+*g:scalac_sbt_options*
+
+Options for scalac compiler, if using with SBT generated classpath. See
+|ScalacSbtClasspath|. Default: '-Ystop-before:cleanup'
+                        
+*g:scalac_sbt_disable_pattern*
+
+Pattern for |search()| to disable SBT classpath based full source check. For
+example a simple scalac compile failes if the current file depends on macros.
+Default: '\(@safeConfig\)'
+
+*g:scalac_disable_sbt_classpath*
+
+Disable SBT classpath generation. If it exists then the compiler will stop
+after the parser phase (scalac -Ystop-after:parser)
+
+COMMANDS                  *play-commands*
+
+*:ScalacSbtClasspath*
+
+Generate a config file for scalac by invoke SBT.
+
+ vim:tw=78:et:ft=help:norl:
